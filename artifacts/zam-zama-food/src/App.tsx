@@ -1,4 +1,4 @@
-import { useState, type FormEvent, type ReactNode } from 'react';
+import { useEffect, useState, type FormEvent, type ReactNode } from 'react';
 import {
   ArrowUpRight,
   CalendarDays,
@@ -199,6 +199,35 @@ function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeMenuPage, setActiveMenuPage] = useState(0);
 
+  useEffect(() => {
+    const revealElements = Array.from(
+      document.querySelectorAll<HTMLElement>('[data-reveal]'),
+    );
+    const prefersReducedMotion = window.matchMedia(
+      '(prefers-reduced-motion: reduce)',
+    ).matches;
+
+    if (prefersReducedMotion || !('IntersectionObserver' in window)) {
+      revealElements.forEach((element) => element.classList.add('is-visible'));
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12, rootMargin: '0px 0px -40px' },
+    );
+
+    revealElements.forEach((element) => observer.observe(element));
+    return () => observer.disconnect();
+  }, []);
+
   const closeMobile = () => setMobileOpen(false);
   const openMenu = () => {
     setActiveMenuPage(0);
@@ -246,7 +275,7 @@ function Home() {
       <main id="top">
         <section className="hero">
           <div className="container hero__grid">
-            <div className="hero__copy reveal">
+            <div className="hero__copy reveal" data-reveal>
               <div className="eyebrow">The neighborhood table</div>
               <h1>Come hungry.<br /><em>Leave happy.</em></h1>
               <p className="hero__lead">Big flavor, generous plates and the kind of welcome that keeps Gulshan-e-Hadeed coming back. Chicken, grills, burgers and family time — all in one place.</p>
@@ -258,7 +287,7 @@ function Home() {
               </div>
               <div className="hero__note"><Stars count={5} /><span><strong>3.8</strong> from 130 Google reviews</span></div>
             </div>
-            <div className="hero__visual reveal reveal--delay">
+            <div className="hero__visual reveal reveal--delay" data-reveal>
               <div className="hero__image-frame">
                 <img src={heroFood} alt="Golden fried chicken and fries at Zam Zama Food" data-testid="img-hero-food" />
               </div>
@@ -278,12 +307,12 @@ function Home() {
 
         <section className="section story" id="story">
           <div className="container story__grid">
-            <div className="story__photos reveal">
+            <div className="story__photos reveal" data-reveal>
               <img className="story__main-photo" src={familyTable} alt="Family meal at a Zam Zama Food table" data-testid="img-story-family" />
               <img className="story__small-photo" src={interiorSignage} alt="Zam Zama Foods interior wall art" data-testid="img-story-interior" />
               <div className="story__stamp">Karachi<br />made<br />memories</div>
             </div>
-            <div className="story__copy reveal reveal--delay">
+            <div className="story__copy reveal reveal--delay" data-reveal>
               <div className="eyebrow">More than a meal</div>
               <h2 className="section-title">A familiar<br />kind of special.</h2>
               <div className="story__rule" />
@@ -296,14 +325,14 @@ function Home() {
 
         <section className="section menu-section" id="menu">
           <div className="container">
-            <div className="menu-section__intro">
+            <div className="menu-section__intro reveal" data-reveal>
               <div>
                 <div className="eyebrow">Come with an appetite</div>
                 <h2 className="section-title">The table<br />starts here.</h2>
               </div>
               <p className="section-copy">There&apos;s a favorite for every person at the table. Start with the classics, then pass everything around.</p>
             </div>
-            <div className="menu-tabs" role="tablist" aria-label="Menu categories">
+            <div className="menu-tabs reveal reveal--delay" data-reveal role="tablist" aria-label="Menu categories">
               <button className="menu-tab menu-tab--active" role="tab" data-testid="tab-menu-all">All-time favorites</button>
               <button className="menu-tab" role="tab" onClick={openMenu} data-testid="tab-menu-full">Full menu</button>
               <button className="menu-tab" role="tab" onClick={openMenu} data-testid="tab-menu-grills">BBQ & grills</button>
@@ -311,7 +340,7 @@ function Home() {
             </div>
             <div className="menu-grid">
               {menuHighlights.map((dish, index) => (
-                <article className="dish-card" key={dish.title} data-testid={`card-dish-${index}`}>
+                <article className={`dish-card reveal reveal--stagger-${index + 1}`} data-reveal key={dish.title} data-testid={`card-dish-${index}`}>
                   <img src={dish.image} alt={dish.title} />
                   <span className="dish-card__tag">{dish.tag}</span>
                   <h3>{dish.title}</h3>
@@ -320,7 +349,7 @@ function Home() {
                 </article>
               ))}
             </div>
-            <div className="menu-reference">
+            <div className="menu-reference reveal reveal--delay2" data-reveal>
               <div className="menu-reference__copy">
                 <div className="menu-reference__icon"><FileText size={20} /></div>
                 <div><strong>See the full Zam Zama menu</strong><span>Prices, platters, karahi, sandwiches and everything in between.</span></div>
@@ -332,8 +361,10 @@ function Home() {
 
         <section className="section gallery" id="gallery">
           <div className="container">
-            <SectionHeading eyebrow="Inside Zam Zama" title="Pull up a chair." copy="A little peek at the room, the plates and the people who make it feel like your place." />
-            <div className="gallery__grid">
+            <div className="reveal" data-reveal>
+              <SectionHeading eyebrow="Inside Zam Zama" title="Pull up a chair." copy="A little peek at the room, the plates and the people who make it feel like your place." />
+            </div>
+            <div className="gallery__grid reveal reveal--delay" data-reveal>
               {gallery.map((item, index) => (
                 <button className="gallery-card" key={item.label} onClick={() => setActiveImage(item)} data-testid={`button-gallery-image-${index}`}>
                   <img src={item.src} alt={item.alt} />
@@ -346,12 +377,12 @@ function Home() {
 
         <section className="section reviews" id="reviews">
           <div className="container reviews__grid">
-            <div className="reveal">
+            <div className="reveal" data-reveal>
               <div className="eyebrow">What the neighborhood says</div>
               <h2 className="section-title">Worth the<br />drive across town.</h2>
               <div className="reviews__score"><strong>3.8</strong><div><Stars count={4} /><small>130 Google reviews</small></div></div>
             </div>
-            <article className="review-card reveal reveal--delay" data-testid="card-featured-review">
+            <article className="review-card reveal reveal--delay" data-reveal data-testid="card-featured-review">
               <blockquote>“The food is fresh, the portions are generous and the ambiance is perfect for family dinners.”</blockquote>
               <div className="review-card__footer"><strong>A Google reviewer</strong><span>Gulshan-e-Hadeed, Karachi</span></div>
             </article>
@@ -360,7 +391,7 @@ function Home() {
 
         <section className="section visit" id="visit">
           <div className="container visit__grid">
-            <div>
+            <div className="reveal" data-reveal>
               <div className="eyebrow">Your next dinner plan</div>
               <h2 className="section-title">Find your way<br />to the good part.</h2>
               <div className="visit__details">
@@ -373,7 +404,7 @@ function Home() {
                 <button className="button button--ghost" onClick={() => setContactOpen(true)} data-testid="button-visit-reserve"><CalendarDays size={15} /> Plan a visit</button>
               </div>
             </div>
-            <div className="visit__hours">
+            <div className="visit__hours reveal reveal--delay" data-reveal>
               <h3>When to drop in</h3>
               <div className="hours-row"><span>Monday – Sunday</span><strong>Open</strong></div>
               <div className="hours-row"><span>Popular dinner window</span><strong>2 pm – 10 pm</strong></div>
