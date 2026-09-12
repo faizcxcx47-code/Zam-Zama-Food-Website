@@ -1,6 +1,6 @@
-# [Project name]
+# Zam Zama Food
 
-_Replace the heading above with the project's name, and this line with one sentence describing what this app does for users._
+An image-led restaurant website for Zam Zama Food in Gulshan-e-Hadeed, Karachi.
 
 ## Run & Operate
 
@@ -22,23 +22,33 @@ _Replace the heading above with the project's name, and this line with one sente
 
 ## Where things live
 
-_Populate as you build — short repo map plus pointers to the source-of-truth file for DB schema, API contracts, theme files, etc._
+- `artifacts/zam-zama-food/` — the deployable React + Vite restaurant website
+- `attached_assets/` — supplied restaurant and menu photography used by the site
+- `artifacts/api-server/` — shared API service scaffold; not needed by the current static site
+- `artifacts/mockup-sandbox/` — reusable mockup preview tooling
 
 ## Architecture decisions
 
-_Populate as you build — non-obvious choices a reader couldn't infer from the code (3-5 bullets)._
+- The first release is a static, presentation-first website; restaurant details and menu highlights are intentionally local content.
+- Supplied restaurant photography is used directly to keep the website grounded in the real Zam Zama dining experience.
+- The page uses anchor navigation and direct phone/WhatsApp/Facebook actions instead of introducing a backend reservation system.
 
 ## Product
 
-_Describe the high-level user-facing capabilities of this app once they exist._
+- Restaurant introduction and story
+- Menu highlights plus full menu image viewer
+- Food and restaurant photo gallery with lightbox viewing
+- Reviews, hours, location, phone, WhatsApp, and Facebook contact actions
+- Reservation/contact prompt
 
 ## User preferences
 
-_Populate as you build — explicit user instructions worth remembering across sessions._
+No additional preferences recorded.
 
 ## Gotchas
 
-_Populate as you build — sharp edges, "always run X before Y" rules._
+- The web artifact relies on the managed workflow to provide `PORT` and `BASE_PATH`.
+- Keep restaurant contact details and photo asset references aligned with the current business information.
 
 ## Pointers
 

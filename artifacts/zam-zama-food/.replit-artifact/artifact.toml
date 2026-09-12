@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "Zam Zama Food"
+description = "A warm, image-led restaurant website for Zam Zama Food in Gulshan-e-Hadeed, Karachi, showcasing its family dining experience, menu highlights, hours, reviews, and contact details."
+version = "1.0.0"
+id = "artifacts/zam-zama-food"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 20597
+
+[services.development]
+run = "pnpm --filter @workspace/zam-zama-food run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/zam-zama-food", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/zam-zama-food/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "20597"
+BASE_PATH = "/"
