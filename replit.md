@@ -1,6 +1,6 @@
-# Zam Zama Food
+# Zam Zama Restaurant
 
-An image-led restaurant website for Zam Zama Food in Gulshan-e-Hadeed, Karachi.
+An image-led restaurant website for Zam Zama Restaurant in Gulshan-e-Hadeed, Karachi.
 
 ## Run & Operate
 

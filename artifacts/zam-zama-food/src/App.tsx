@@ -37,10 +37,10 @@ type ImageItem = { src: string; alt: string; label: string };
 
 const gallery: ImageItem[] = [
   { src: familyTable, alt: 'A family table with grilled food and fresh naan', label: 'Bring everyone' },
-  { src: diningRoom, alt: 'Warm Zam Zama Food dining room', label: 'Settle in' },
+  { src: diningRoom, alt: 'Warm Zam Zama Restaurant dining room', label: 'Settle in' },
   { src: familySpread, alt: 'A generous spread of burgers, fries and baked food', label: 'Share the table' },
-  { src: interiorSignage, alt: 'Zam Zama Foods restaurant wall and signage', label: 'Made in Gulshan-e-Hadeed' },
-  { src: storefront, alt: 'Zam Zama Foods storefront at night', label: 'Find us tonight' },
+  { src: interiorSignage, alt: 'Zam Zama Restaurant wall and signage', label: 'Made in Gulshan-e-Hadeed' },
+  { src: storefront, alt: 'Zam Zama Restaurant storefront at night', label: 'Find us tonight' },
 ];
 
 const menuPages = [menuPageOne, menuPageTwo, menuPageThree, menuPageFour];
@@ -145,7 +145,7 @@ function ContactModal({ onClose }: { onClose: () => void }) {
             Thanks for reaching out. Call <a href="tel:02134712929">021 34712929</a> for a quick confirmation, or send us
             the same details on WhatsApp.
           </p>
-          <a className="button button--dark" href="https://wa.me/923023339073?text=Hi%20Zam%20Zama%20Food%2C%20I%20sent%20a%20reservation%20request." target="_blank" rel="noreferrer" data-testid="link-success-whatsapp">
+          <a className="button button--dark" href="https://wa.me/923023339073?text=Hi%20Zam%20Zama%20Restaurant%2C%20I%20sent%20a%20reservation%20request." target="_blank" rel="noreferrer" data-testid="link-success-whatsapp">
             Continue on WhatsApp <ArrowUpRight size={15} />
           </a>
         </div>
@@ -253,7 +253,7 @@ function Home() {
             <span className="brand__mark">ZZ</span>
             <span className="brand__words">
               <span className="brand__name">Zam Zama</span>
-              <span className="brand__sub">Food · Karachi</span>
+              <span className="brand__sub">Restaurant · Karachi</span>
             </span>
           </a>
           <nav className={`nav__links${mobileOpen ? ' nav__links--open' : ''}`} aria-label="Main navigation">
@@ -281,7 +281,7 @@ function Home() {
               <p className="hero__lead">Big flavor, generous plates and the kind of welcome that keeps Gulshan-e-Hadeed coming back. Chicken, grills, burgers and family time — all in one place.</p>
               <div className="hero__buttons">
                 <a className="button button--primary" href="#menu" data-testid="link-hero-menu">See what&apos;s cooking <ArrowUpRight size={16} /></a>
-                <a className="button button--ghost" href="https://wa.me/923023339073?text=Hi%20Zam%20Zama%20Food%2C%20I%27d%20like%20to%20place%20an%20order." target="_blank" rel="noreferrer" data-testid="link-hero-whatsapp">
+                <a className="button button--ghost" href="https://wa.me/923023339073?text=Hi%20Zam%20Zama%20Restaurant%2C%20I%27d%20like%20to%20place%20an%20order." target="_blank" rel="noreferrer" data-testid="link-hero-whatsapp">
                   <MessageCircle size={16} /> WhatsApp us
                 </a>
               </div>
@@ -289,9 +289,9 @@ function Home() {
             </div>
             <div className="hero__visual reveal reveal--delay" data-reveal>
               <div className="hero__image-frame">
-                <img src={heroFood} alt="Golden fried chicken and fries at Zam Zama Food" data-testid="img-hero-food" />
+                <img src={heroFood} alt="Golden fried chicken and fries at Zam Zama Restaurant" data-testid="img-hero-food" />
               </div>
-              <div className="hero__float"><strong>Made to share.</strong><span>Rs 1–1,000 · fast food & family dining</span></div>
+                <div className="hero__float"><strong>Made to share.</strong><span>Rs 1–1,000 · restaurant & family dining</span></div>
               <div className="hero__badge">Good food<small>good company</small></div>
               <div className="hero__scroll">Scroll for a seat <ChevronRight size={14} /></div>
             </div>
@@ -308,15 +308,15 @@ function Home() {
         <section className="section story" id="story">
           <div className="container story__grid">
             <div className="story__photos reveal" data-reveal>
-              <img className="story__main-photo" src={familyTable} alt="Family meal at a Zam Zama Food table" data-testid="img-story-family" />
-              <img className="story__small-photo" src={interiorSignage} alt="Zam Zama Foods interior wall art" data-testid="img-story-interior" />
+              <img className="story__main-photo" src={familyTable} alt="Family meal at a Zam Zama Restaurant table" data-testid="img-story-family" />
+              <img className="story__small-photo" src={interiorSignage} alt="Zam Zama Restaurant interior wall art" data-testid="img-story-interior" />
               <div className="story__stamp">Karachi<br />made<br />memories</div>
             </div>
             <div className="story__copy reveal reveal--delay" data-reveal>
               <div className="eyebrow">More than a meal</div>
               <h2 className="section-title">A familiar<br />kind of special.</h2>
               <div className="story__rule" />
-              <p>Zam Zama Food is where dinner plans become the table everyone talks about. We cook with the generous spirit of Karachi: food that arrives hot, portions that invite sharing, and a room made for one more.</p>
+              <p>Zam Zama Restaurant is where dinner plans become the table everyone talks about. We cook with the generous spirit of Karachi: food that arrives hot, portions that invite sharing, and a room made for one more.</p>
               <p>From a quick crispy chicken fix to a full family spread, we keep it honest, hearty and easy to come back to.</p>
               <div className="story__signature"><span className="story__signature-mark">Zam Zama</span><small>Family food, from our family to yours</small></div>
             </div>
@@ -397,10 +397,10 @@ function Home() {
               <div className="visit__details">
                 <div className="visit__detail"><MapPin className="visit__detail-icon" size={20} /><div><strong>Come see us</strong><span>A 826, Gulshan e Hadeed Phase 1,<br />Bin Qasim Town, Karachi, 75010</span></div></div>
                 <div className="visit__detail"><Phone className="visit__detail-icon" size={20} /><div><strong>Call for orders</strong><a href="tel:02134712929" data-testid="link-visit-call">021 34712929</a></div></div>
-                <div className="visit__detail"><MessageCircle className="visit__detail-icon" size={20} /><div><strong>WhatsApp orders</strong><a href="https://wa.me/923023339073?text=Hi%20Zam%20Zama%20Food%2C%20I%27d%20like%20to%20place%20an%20order." target="_blank" rel="noreferrer" data-testid="link-visit-whatsapp">0302 3339073</a></div></div>
+                <div className="visit__detail"><MessageCircle className="visit__detail-icon" size={20} /><div><strong>WhatsApp orders</strong><a href="https://wa.me/923023339073?text=Hi%20Zam%20Zama%20Restaurant%2C%20I%27d%20like%20to%20place%20an%20order." target="_blank" rel="noreferrer" data-testid="link-visit-whatsapp">0302 3339073</a></div></div>
               </div>
               <div className="visit__actions">
-                <a className="button button--primary" href="https://www.google.com/maps/search/?api=1&query=Zam+Zama+Food+Gulshan+e+Hadeed+Karachi" target="_blank" rel="noreferrer" data-testid="link-get-directions">Get directions <ArrowUpRight size={15} /></a>
+                <a className="button button--primary" href="https://www.google.com/maps/search/?api=1&query=Zam+Zama+Restaurant+Gulshan+e+Hadeed+Karachi" target="_blank" rel="noreferrer" data-testid="link-get-directions">Get directions <ArrowUpRight size={15} /></a>
                 <button className="button button--ghost" onClick={() => setContactOpen(true)} data-testid="button-visit-reserve"><CalendarDays size={15} /> Plan a visit</button>
               </div>
             </div>
@@ -409,7 +409,7 @@ function Home() {
               <div className="hours-row"><span>Monday – Sunday</span><strong>Open</strong></div>
               <div className="hours-row"><span>Popular dinner window</span><strong>2 pm – 10 pm</strong></div>
               <div className="hours-row"><span>Price for a happy table</span><strong>Rs 1–1,000</strong></div>
-              <div className="hours-row"><span>On Facebook</span><a href="https://www.facebook.com/ZamzamaFoods" target="_blank" rel="noreferrer" data-testid="link-facebook">/Zamzama Foods</a></div>
+              <div className="hours-row"><span>On Facebook</span><a href="https://www.facebook.com/ZamzamaFoods" target="_blank" rel="noreferrer" data-testid="link-facebook">/Zam Zama Restaurant</a></div>
               <div className="visit__actions"><a className="button button--dark" href="tel:02134712929" data-testid="link-hours-call"><Clock3 size={15} /> Call the restaurant</a></div>
             </div>
           </div>
@@ -418,7 +418,7 @@ function Home() {
 
       <footer className="footer">
         <div className="container footer__inner">
-          <span>© {new Date().getFullYear()} Zam Zama Food · Made for Karachi appetites.</span>
+          <span>© {new Date().getFullYear()} Zam Zama Restaurant · Made for Karachi appetites.</span>
           <div className="footer__social"><a href="https://www.facebook.com/ZamzamaFoods" target="_blank" rel="noreferrer" data-testid="link-footer-facebook">Facebook</a><a href="#top" data-testid="link-footer-top">Back to top ↑</a></div>
         </div>
       </footer>
@@ -432,7 +432,7 @@ function Home() {
       {menuOpen && (
         <Modal onClose={() => setMenuOpen(false)} image>
           <div className="menu-viewer">
-            <img src={menuPages[activeMenuPage]} alt={`Zam Zama Food menu page ${activeMenuPage + 1}`} data-testid="img-menu-page" />
+            <img src={menuPages[activeMenuPage]} alt={`Zam Zama Restaurant menu page ${activeMenuPage + 1}`} data-testid="img-menu-page" />
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 12, padding: '12px 4px 2px' }}>
               <button className="button button--ghost" onClick={() => setActiveMenuPage((page) => (page === 0 ? menuPages.length - 1 : page - 1))} data-testid="button-menu-previous">Previous</button>
               <span style={{ color: '#f7f0e7', fontSize: '.75rem' }}>Page {activeMenuPage + 1} of {menuPages.length}</span>
