@@ -145,7 +145,7 @@ function ContactModal({ onClose }: { onClose: () => void }) {
             Thanks for reaching out. Call <a href="tel:02134712929">021 34712929</a> for a quick confirmation, or send us
             the same details on WhatsApp.
           </p>
-          <a className="button button--dark" href="https://wa.me/923023339073?text=Hi%20Zam%20Zama%20Restaurant%2C%20I%20sent%20a%20reservation%20request." target="_blank" rel="noreferrer" data-testid="link-success-whatsapp">
+          <a className="button button--dark" href="https://wa.me/923323339073?text=Hi%20Zam%20Zama%20Restaurant%2C%20I%20sent%20a%20reservation%20request." target="_blank" rel="noreferrer" data-testid="link-success-whatsapp">
             Continue on WhatsApp <ArrowUpRight size={15} />
           </a>
         </div>
@@ -281,7 +281,7 @@ function Home() {
               <p className="hero__lead">Big flavor, generous plates and the kind of welcome that keeps Gulshan-e-Hadeed coming back. Chicken, grills, burgers and family time — all in one place.</p>
               <div className="hero__buttons">
                 <a className="button button--primary" href="#menu" data-testid="link-hero-menu">See what&apos;s cooking <ArrowUpRight size={16} /></a>
-                <a className="button button--ghost" href="https://wa.me/923023339073?text=Hi%20Zam%20Zama%20Restaurant%2C%20I%27d%20like%20to%20place%20an%20order." target="_blank" rel="noreferrer" data-testid="link-hero-whatsapp">
+                <a className="button button--ghost" href="https://wa.me/923323339073?text=Hi%20Zam%20Zama%20Restaurant%2C%20I%27d%20like%20to%20place%20an%20order." target="_blank" rel="noreferrer" data-testid="link-hero-whatsapp">
                   <MessageCircle size={16} /> WhatsApp us
                 </a>
               </div>
@@ -397,7 +397,7 @@ function Home() {
               <div className="visit__details">
                 <div className="visit__detail"><MapPin className="visit__detail-icon" size={20} /><div><strong>Come see us</strong><span>A 826, Gulshan e Hadeed Phase 1,<br />Bin Qasim Town, Karachi, 75010</span></div></div>
                 <div className="visit__detail"><Phone className="visit__detail-icon" size={20} /><div><strong>Call for orders</strong><a href="tel:02134712929" data-testid="link-visit-call">021 34712929</a></div></div>
-                <div className="visit__detail"><MessageCircle className="visit__detail-icon" size={20} /><div><strong>WhatsApp orders</strong><a href="https://wa.me/923023339073?text=Hi%20Zam%20Zama%20Restaurant%2C%20I%27d%20like%20to%20place%20an%20order." target="_blank" rel="noreferrer" data-testid="link-visit-whatsapp">0302 3339073</a></div></div>
+                <div className="visit__detail"><MessageCircle className="visit__detail-icon" size={20} /><div><strong>WhatsApp orders</strong><a href="https://wa.me/923323339073?text=Hi%20Zam%20Zama%20Restaurant%2C%20I%27d%20like%20to%20place%20an%20order." target="_blank" rel="noreferrer" data-testid="link-visit-whatsapp">0332 3339073</a></div></div>
               </div>
               <div className="visit__actions">
                 <a className="button button--primary" href="https://www.google.com/maps/search/?api=1&query=Zam+Zama+Restaurant+Gulshan+e+Hadeed+Karachi" target="_blank" rel="noreferrer" data-testid="link-get-directions">Get directions <ArrowUpRight size={15} /></a>
